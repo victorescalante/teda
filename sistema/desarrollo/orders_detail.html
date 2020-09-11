@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Detalle de la orden
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+
+  <style>
+    .table thead tr th{
+      font-size: 10px;
+    }
+  </style>
+</head>
+
+<body class="">
+<div class="wrapper ">
+  <div class="sidebar" data-color="purple" data-background-color="white" data-image="assets/img/sidebar-1.jpg">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo">
+      <a href="#" class="simple-text logo-normal">
+        <img src="http://www.tedacon.com.mx/web/images/logo.png" alt="" class="w-100 p-3">
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="./index.html">
+            <i class="material-icons">dashboard</i>
+            <p>Administrador</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./materials.html">
+            <i class="material-icons">content_paste</i>
+            <p>Materiales</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services.html">
+            <i class="material-icons">content_paste</i>
+            <p>Mano de obra</p>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./orders.html">
+            <i class="material-icons">content_paste</i>
+            <p>Ordenes de servicio</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+          <a class="navbar-brand" href="#pablo">Detalle del servicio</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end">
+          <form class="navbar-form">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Busqueda...">
+              <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                <i class="material-icons">search</i>
+                <div class="ripple-container"></div>
+              </button>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="material-icons">dashboard</i>
+                <p class="d-lg-none d-md-block">
+                  Stats
+                </p>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">notifications</i>
+                <span class="notification">5</span>
+                <p class="d-lg-none d-md-block">
+                  Some Actions
+                </p>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Un proveedor ha sido actualizado</a>
+                <a class="dropdown-item" href="#">Se ha generado una nueva orden</a>
+                <a class="dropdown-item" href="#">Han llegado más materiales</a>
+                <a class="dropdown-item" href="#">Orden de compra de Provedor</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">person</i>
+                <p class="d-lg-none d-md-block">
+                  Account
+                </p>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Configuración</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../index.html">salir</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Orden del servicio</h4>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row pt-3">
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Cliente</label>
+                        <input type="text" class="form-control" value="FINANCIERA RURAL" disabled>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Trabajo</label>
+                        <input type="text" class="form-control" value="Mantenimiento" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h4 class="text-primary">Desglose de servicio</h4>
+                      <br>
+                      <div class="">
+                        <div class="pl-3">
+                          <table class="table" style="font-size:10px;">
+                            <thead>
+                            <tr>
+                              <th scope="col">Codigo</th>
+                              <th scope="col">Descripción</th>
+                              <th scope="col">Unidad</th>
+                              <th scope="col">Cantidad</th>
+                              <th scope="col">Precio Unitario</th>
+                              <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td scope="row">FND-OS-001</td>
+                              <th>Aplanado fino de 1 cm en muros</th>
+                              <td>m2</td>
+                              <td>2</td>
+                              <td>54.12</td>
+                              <td>$ 108.24</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">FND-OS-002</td>
+                              <th>Plantilla de 5 cm de espesor de concreto</th>
+                              <td>m2</td>
+                              <td>5</td>
+                              <td>61.69</td>
+                              <td>$ 308.45</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">FND-OS-003</td>
+                              <th>Muro de 23 cm a base de tabique</th>
+                              <td>m2</td>
+                              <td>3</td>
+                              <td>324.83 </td>
+                              <td>$ 974.49 </td>
+                            </tr>
+                            <tr>
+                              <td scope="row">FND-OS-004</td>
+                              <th>Repelado de 2 cm en muros</th>
+                              <td>m2</td>
+                              <td>4</td>
+                              <td>69.23</td>
+                              <td>$ 276.92</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">FND-OS-005</td>
+                              <th>Suministro y colocación de muro a dos caras de 10 cm</th>
+                              <td>pza</td>
+                              <td>1</td>
+                              <td>7,520.28</td>
+                              <td>$ 7,520.28</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <div class="pl-3">
+                            <p class="small">MATERIAL</p>
+                            <table class="table" style="font-size:10px;">
+                              <thead>
+                              <tr>
+                                <th scope="col">Clave</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Total</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <th scope="row">137</th>
+                                <td>Crocha de 4" (100 MM)</td>
+                                <td>pza</td>
+                                <td>1</td>
+                                <td>$ 56.47</td>
+                                <td>$ 56.47</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">510</th>
+                                <td>Hoja de tablaroca</td>
+                                <td>pza</td>
+                                <td>6</td>
+                                <td>$ 274.26</td>
+                                <td>$ 1,645.56</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">611</th>
+                                <td>Lua de agua No. 180</td>
+                                <td>pza</td>
+                                <td>3</td>
+                                <td>$ 15.02</td>
+                                <td>$ 45.06</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">780</th>
+                                <td>Perfacinta de refuerzo 75 MM</td>
+                                <td>rollo</td>
+                                <td>.6</td>
+                                <td>$ 79.74</td>
+                                <td>$ 47.84</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">791</th>
+                                <td>Pua de 1" para tablaroca</td>
+                                <td>pza</td>
+                                <td>200</td>
+                                <td>$ 1.07</td>
+                                <td>$ 214.0</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">814</th>
+                                <td>Pintura vinilica vinimex mca</td>
+                                <td>lt</td>
+                                <td>4</td>
+                                <td>$ 193.21</td>
+                                <td>$ 772.84</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">859</th>
+                                <td>Plastico protector de uso rudo</td>
+                                <td>paq</td>
+                                <td>1</td>
+                                <td>$ 75.42</td>
+                                <td>$ 75.42</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">886</th>
+                                <td>Poste de lamina de 6.35 cm</td>
+                                <td>pza</td>
+                                <td>14</td>
+                                <td>$ 110.67</td>
+                                <td>$ 1,549.38</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">919</th>
+                                <td>Redimix cub de 24 kg</td>
+                                <td>pza</td>
+                                <td>1</td>
+                                <td>$ 232.58</td>
+                                <td>$ 232.58</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">954</th>
+                                <td>Rodillo calidad media 3/4</td>
+                                <td>pza</td>
+                                <td>1</td>
+                                <td>$ 95.70</td>
+                                <td>$ 95.70</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">967</th>
+                                <td>Sellador comex 5 x 1 reforzado</td>
+                                <td>lt</td>
+                                <td>1</td>
+                                <td>$ 194.29</td>
+                                <td>$ 194.29</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">193</th>
+                                <td>Canal de amarre de 3.05 mts</td>
+                                <td>pza</td>
+                                <td>2.5</td>
+                                <td>$ 88.41</td>
+                                <td>$ 221.03</td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                            <br><br>
+
+                            <p class="small">MANO DE OBRA</p>
+                            <table class="table" style="font-size:10px;">
+                              <thead>
+                              <tr>
+                                <th scope="col">Clave</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Total</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <th scope="row">15</th>
+                                <td>Pintor</td>
+                                <td>jor</td>
+                                <td>0.50</td>
+                                <td>$ 637.77</td>
+                                <td>$ 318.89</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">20</th>
+                                <td>Ayudante general</td>
+                                <td>jor</td>
+                                <td>1.50</td>
+                                <td>$ 605.05</td>
+                                <td>$ 907.58</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">9</th>
+                                <td>Tablaroquero</td>
+                                <td>jor</td>
+                                <td>1</td>
+                                <td>$ 1,143.64</td>
+                                <td>$ 1,143.64</td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h3 class="float-right">Total: $9,188.38</h3>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Plugin for the momentJs  -->
+<script src="assets/js/plugins/moment.min.js"></script>
+<!--  Plugin for Sweet Alert -->
+<script src="assets/js/plugins/sweetalert2.js"></script>
+<!-- Forms Validations Plugin -->
+<script src="assets/js/plugins/jquery.validate.min.js"></script>
+<!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+<script src="assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<script src="assets/js/plugins/bootstrap-selectpicker.js"></script>
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+<!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+<script src="assets/js/plugins/jquery.dataTables.min.js"></script>
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="assets/js/plugins/bootstrap-tagsinput.js"></script>
+<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="assets/js/plugins/jasny-bootstrap.min.js"></script>
+<!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+<script src="assets/js/plugins/fullcalendar.min.js"></script>
+<!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+<script src="assets/js/plugins/jquery-jvectormap.js"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="assets/js/plugins/nouislider.min.js"></script>
+<!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<!-- Library for adding dinamically elements -->
+<script src="assets/js/plugins/arrive.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="assets/demo/demo.js"></script>
+<script>
+  $(document).ready(function() {
+    $().ready(function() {
+      $sidebar = $('.sidebar');
+
+      $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+      $full_page = $('.full-page');
+
+      $sidebar_responsive = $('body > .navbar-collapse');
+
+      window_width = $(window).width();
+
+      fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+      if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+        if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+          $('.fixed-plugin .dropdown').addClass('open');
+        }
+
+      }
+
+      $('.fixed-plugin a').click(function(event) {
+        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+        if ($(this).hasClass('switch-trigger')) {
+          if (event.stopPropagation) {
+            event.stopPropagation();
+          } else if (window.event) {
+            window.event.cancelBubble = true;
+          }
+        }
+      });
+
+      $('.fixed-plugin .active-color span').click(function() {
+        $full_page_background = $('.full-page-background');
+
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+
+        var new_color = $(this).data('color');
+
+        if ($sidebar.length != 0) {
+          $sidebar.attr('data-color', new_color);
+        }
+
+        if ($full_page.length != 0) {
+          $full_page.attr('filter-color', new_color);
+        }
+
+        if ($sidebar_responsive.length != 0) {
+          $sidebar_responsive.attr('data-color', new_color);
+        }
+      });
+
+      $('.fixed-plugin .background-color .badge').click(function() {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+
+        var new_color = $(this).data('background-color');
+
+        if ($sidebar.length != 0) {
+          $sidebar.attr('data-background-color', new_color);
+        }
+      });
+
+      $('.fixed-plugin .img-holder').click(function() {
+        $full_page_background = $('.full-page-background');
+
+        $(this).parent('li').siblings().removeClass('active');
+        $(this).parent('li').addClass('active');
+
+
+        var new_image = $(this).find("img").attr('src');
+
+        if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+          $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $sidebar_img_container.fadeIn('fast');
+          });
+        }
+
+        if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+          var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+          $full_page_background.fadeOut('fast', function() {
+            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+            $full_page_background.fadeIn('fast');
+          });
+        }
+
+        if ($('.switch-sidebar-image input:checked').length == 0) {
+          var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+          var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+          $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+          $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+        }
+
+        if ($sidebar_responsive.length != 0) {
+          $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+        }
+      });
+
+      $('.switch-sidebar-image input').change(function() {
+        $full_page_background = $('.full-page-background');
+
+        $input = $(this);
+
+        if ($input.is(':checked')) {
+          if ($sidebar_img_container.length != 0) {
+            $sidebar_img_container.fadeIn('fast');
+            $sidebar.attr('data-image', '#');
+          }
+
+          if ($full_page_background.length != 0) {
+            $full_page_background.fadeIn('fast');
+            $full_page.attr('data-image', '#');
+          }
+
+          background_image = true;
+        } else {
+          if ($sidebar_img_container.length != 0) {
+            $sidebar.removeAttr('data-image');
+            $sidebar_img_container.fadeOut('fast');
+          }
+
+          if ($full_page_background.length != 0) {
+            $full_page.removeAttr('data-image', '#');
+            $full_page_background.fadeOut('fast');
+          }
+
+          background_image = false;
+        }
+      });
+
+      $('.switch-sidebar-mini input').change(function() {
+        $body = $('body');
+
+        $input = $(this);
+
+        if (md.misc.sidebar_mini_active == true) {
+          $('body').removeClass('sidebar-mini');
+          md.misc.sidebar_mini_active = false;
+
+          $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+        } else {
+
+          $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+          setTimeout(function() {
+            $('body').addClass('sidebar-mini');
+
+            md.misc.sidebar_mini_active = true;
+          }, 300);
+        }
+
+        // we simulate the window Resize so the charts will get updated in realtime.
+        var simulateWindowResize = setInterval(function() {
+          window.dispatchEvent(new Event('resize'));
+        }, 180);
+
+        // we stop the simulation of Window Resize after the animations are completed
+        setTimeout(function() {
+          clearInterval(simulateWindowResize);
+        }, 1000);
+
+      });
+    });
+  });
+</script>
+</body>
+
+</html>
